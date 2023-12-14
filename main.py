@@ -1,5 +1,5 @@
 import string
-
+string.printable = string.printable.replace("\r", "à")
 
 def cesar_ciffer(message, key):
 	if type(key) != int :
