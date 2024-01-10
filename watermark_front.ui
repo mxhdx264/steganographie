@@ -34,7 +34,7 @@ QPushButton {
   background-color: white; 
   color: black; 
   border: 2px solid #008CBA;
-  font-size:11px;
+  font-size:13px;
   font-weight:bold;
   border-radius: 10px;
 }
@@ -61,6 +61,13 @@ color: rgb(31, 69, 152);
       <width>131</width>
       <height>45</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Parcourir</string>
@@ -95,11 +102,18 @@ color: rgb(31, 69, 152);
    <widget class="QPushButton" name="watermark_button">
     <property name="geometry">
      <rect>
-      <x>320</x>
+      <x>221</x>
       <y>730</y>
       <width>136</width>
       <height>45</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>steganographier</string>
@@ -123,6 +137,19 @@ color: rgb(31, 69, 152);
     </property>
     <property name="text">
      <string>Steganosaure</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="extract_message_button">
+    <property name="geometry">
+     <rect>
+      <x>431</x>
+      <y>730</y>
+      <width>149</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Extraire le message</string>
     </property>
    </widget>
   </widget>
