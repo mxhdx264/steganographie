@@ -4,6 +4,8 @@ from PyQt5 import uic
 from PyQt5.QtGui import QPixmap
 import os
 
+from hidden_watermark import lsb1_stegano
+
 
 
 class MyWindow(QMainWindow):
@@ -13,9 +15,18 @@ class MyWindow(QMainWindow):
 
 
         self.browse_button.clicked.connect(self.browse_image)
+        self.watermark_button.clicked.connect(self.watermark_image)
 
 
 
     def browse_image(self):
-        image_path, _ = QFileDialog.getOpenFileName(self, 'Selectionne une image', '', 'All Files (*)')
-        self.image_label.setPixmap(QPixmap(image_path))
+        self.image_path, _ = QFileDialog.getOpenFileName(self, 'Selectionne une image', '', 'All Files (*)')
+        self.image_label.setPixmap(QPixmap(self.image_path))
+        self.watermark_button.setEnabled(True)
+        self.extract_message_button.setEnabled(True)
+
+
+
+    def watermark_image(self):
+        message = self.message_plain_text_edit.toPlainText()
+        lsb1_stegano(self.image_path, message)
