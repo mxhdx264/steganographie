@@ -50,9 +50,9 @@ def lsb1_extract_message(watermarked_image_path):
 
 	binary_message = "".join(binary_message_list)
 
-	message = "".join([chr(int(binary_message[i:i+8], 2)) for i in range(0, len(binary_message), 8)])
+	hidden_message = "".join([chr(int(binary_message[i:i+8], 2)) for i in range(0, len(binary_message), 8)])
 
-	print(message)
+	return hidden_message
 
 
 if __name__ == "__main__":

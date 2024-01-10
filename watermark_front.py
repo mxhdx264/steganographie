@@ -4,7 +4,7 @@ from PyQt5 import uic
 from PyQt5.QtGui import QPixmap
 import os
 
-from hidden_watermark import lsb1_stegano
+import hidden_watermark
 
 
 
@@ -16,7 +16,7 @@ class MyWindow(QMainWindow):
 
         self.browse_button.clicked.connect(self.browse_image)
         self.watermark_button.clicked.connect(self.watermark_image)
-
+        self.extract_message_button.clicked.connect(self.extract_message)
 
 
     def browse_image(self):
@@ -29,4 +29,8 @@ class MyWindow(QMainWindow):
 
     def watermark_image(self):
         message = self.message_plain_text_edit.toPlainText()
-        lsb1_stegano(self.image_path, message)
+        hidden_watermark.lsb1_stegano(self.image_path, message)
+
+    def extract_message(self):
+        hidden_message = hidden_watermark.lsb1_extract_message(self.image_path)
+        self.message_plain_text_edit.setPlainText(hidden_message)
